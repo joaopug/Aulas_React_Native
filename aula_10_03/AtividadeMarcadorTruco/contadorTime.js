@@ -8,10 +8,30 @@ export default function ContadorTime({ time, numeroNos, setNumeroNos, numeroEles
             <Text style={styles.texto}>{time}</Text>
             <Text style={[styles.texto, { fontSize: 70 }]}>{placarParaExibir}</Text>
             <View style={styles.botoes}>
+                <View style={styles.maisMenos}>
+                    <Botao
+                        time={time}
+                        simbolo="+"
+                        tipo={1}
+                        numeroNos={numeroNos}
+                        setNumeroNos={setNumeroNos}
+                        numeroEles={numeroEles}
+                        setNumeroEles={setNumeroEles}
+                    />
+                    <Botao
+                        time={time}
+                        simbolo="-"
+                        tipo={2}
+                        numeroNos={numeroNos}
+                        setNumeroNos={setNumeroNos}
+                        numeroEles={numeroEles}
+                        setNumeroEles={setNumeroEles}
+                    />
+                </View>
                 <Botao
                     time={time}
-                    cor="#239600"
-                    simbolo="+"
+                    simbolo="TRUCO"
+                    tipo={3}
                     numeroNos={numeroNos}
                     setNumeroNos={setNumeroNos}
                     numeroEles={numeroEles}
@@ -19,8 +39,26 @@ export default function ContadorTime({ time, numeroNos, setNumeroNos, numeroEles
                 />
                 <Botao
                     time={time}
-                    simbolo="-"
-                    cor="#a50303"
+                    simbolo="SEISSS"
+                    tipo={4}
+                    numeroNos={numeroNos}
+                    setNumeroNos={setNumeroNos}
+                    numeroEles={numeroEles}
+                    setNumeroEles={setNumeroEles}
+                />
+                <Botao
+                    time={time}
+                    simbolo="NOVEEE"
+                    tipo={5}
+                    numeroNos={numeroNos}
+                    setNumeroNos={setNumeroNos}
+                    numeroEles={numeroEles}
+                    setNumeroEles={setNumeroEles}
+                />
+                <Botao
+                    time={time}
+                    simbolo="DOZI"
+                    tipo={6}
                     numeroNos={numeroNos}
                     setNumeroNos={setNumeroNos}
                     numeroEles={numeroEles}
@@ -42,10 +80,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         fontSize: 25,
         fontFamily: "Roboto",
-        marginTop:20
+        marginTop: 20
     },
 
-    botoes: {
+    maisMenos: {
         flexDirection: "row",
         gap: 40,
         marginTop: 60
