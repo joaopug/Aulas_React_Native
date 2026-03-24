@@ -6,6 +6,8 @@ import ContadorTime from "./contadorTime";
 export default function App() {
   const [numeroNos, setNumeroNos] = useState(0)
   const [numeroEles, setNumeroEles] = useState(0)
+  const [vitoriasNos, setVitoriasNos] = useState(0)
+  const [vitoriasEles, setVitoriasEles] = useState(0)
 
 
   return (
@@ -22,6 +24,10 @@ export default function App() {
           setNumeroNos={setNumeroNos}
           numeroEles={numeroEles}
           setNumeroEles={setNumeroEles}
+          vitoriasNos={vitoriasNos}
+          setVitoriasNos={setVitoriasNos}
+          vitoriasEles={vitoriasEles}
+          setVitoriasEles={setVitoriasEles}
           time="Nós"
         />
         <ContadorTime
@@ -29,6 +35,10 @@ export default function App() {
           setNumeroNos={setNumeroNos}
           numeroEles={numeroEles}
           setNumeroEles={setNumeroEles}
+          vitoriasNos={vitoriasNos}
+          setVitoriasNos={setVitoriasNos}
+          vitoriasEles={vitoriasEles}
+          setVitoriasEles={setVitoriasEles}
           time="Eles"
         />
       </View>

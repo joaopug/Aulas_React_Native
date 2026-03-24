@@ -1,9 +1,11 @@
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
-export default function Botao({ simbolo, time, tipo, numeroNos, setNumeroNos, numeroEles, setNumeroEles }) {
+export default function Botao({ simbolo, time, tipo, numeroNos, setNumeroNos, vitoriasNos, setVitoriasNos, numeroEles, setNumeroEles, vitoriasEles, setVitoriasEles }) {
     const fazer = (simbolo, time) => {
         const ehNos = time === "Nós";
         const valorAtual = ehNos ? numeroNos : numeroEles;
         const setValor = ehNos ? setNumeroNos : setNumeroEles;
+        const vitoriasAtual = ehNos ? vitoriasNos : vitoriasEles
+        const setVitorias = ehNos ? setVitoriasNos : setVitoriasEles
 
         const tipoValores = {
             "+": 1,
@@ -21,6 +23,9 @@ export default function Botao({ simbolo, time, tipo, numeroNos, setNumeroNos, nu
             setValor(resultado > 12 ? 12 : resultado);
         }
 
+        if (valorAtual === 12) {
+            setVitorias(vitoriasAtual + 1)
+        }
     }
 
     const tiposEstilo = {

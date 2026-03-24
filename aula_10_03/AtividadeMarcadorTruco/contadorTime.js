@@ -1,12 +1,14 @@
 import { Text, View, StyleSheet } from "react-native"
 import Botao from './botao'
 
-export default function ContadorTime({ time, numeroNos, setNumeroNos, numeroEles, setNumeroEles }) {
+export default function ContadorTime({ time, numeroNos, setNumeroNos, vitoriasNos, setVitoriasNos, numeroEles, setNumeroEles, vitoriasEles, setVitoriasEles }) {
     const placarParaExibir = time === "Nós" ? numeroNos : numeroEles;
+    const vitoriasParaExibir =  time === "Nós" ? vitoriasNos : vitoriasEles
     return (
         <View style={styles.info}>
             <Text style={styles.texto}>{time}</Text>
             <Text style={[styles.texto, { fontSize: 70 }]}>{placarParaExibir}</Text>
+            <Text>{vitoriasParaExibir}</Text>
             <View style={styles.botoes}>
                 <View style={styles.maisMenos}>
                     <Botao
@@ -17,6 +19,10 @@ export default function ContadorTime({ time, numeroNos, setNumeroNos, numeroEles
                         setNumeroNos={setNumeroNos}
                         numeroEles={numeroEles}
                         setNumeroEles={setNumeroEles}
+                        vitoriasNos={vitoriasNos}
+                        setVitoriasNos={setVitoriasNos}
+                        vitoriasEles={vitoriasEles}
+                        setVitoriasEles={setVitoriasEles}
                     />
                     <Botao
                         time={time}
@@ -26,6 +32,10 @@ export default function ContadorTime({ time, numeroNos, setNumeroNos, numeroEles
                         setNumeroNos={setNumeroNos}
                         numeroEles={numeroEles}
                         setNumeroEles={setNumeroEles}
+                        vitoriasNos={vitoriasNos}
+                        setVitoriasNos={setVitoriasNos}
+                        vitoriasEles={vitoriasEles}
+                        setVitoriasEles={setVitoriasEles}
                     />
                 </View>
                 <Botao
