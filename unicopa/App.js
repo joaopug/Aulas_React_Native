@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Image, FlatList } from 'react-native';
 import listajogos from './env/copa_mundo_2026_jogos_brasilia_com_estadios.json';
+import { MapaBandeiras } from './componentes/mapa_bandeiras.js';
 
 
 export default function App() {
@@ -29,6 +30,8 @@ export default function App() {
       jogos: grupos[data]
     }));;
   }
+
+  console.log(MapaBandeiras)
 
   const dadosAgrupados = agruparJogos(listajogos.jogos);
 
@@ -66,6 +69,10 @@ export default function App() {
                   </View>
 
                   <View style={styles.times}>
+                    <Image
+                      source={MapaBandeiras[jogo.sigla_casa]}
+                      style={{ width: 40, height: 30 }}
+                    />
                     <Text>{jogo.sigla_casa}</Text>
 
                     <View style={styles.horarioEVersus}>
@@ -74,6 +81,10 @@ export default function App() {
                     </View>
 
                     <Text>{jogo.sigla_fora}</Text>
+                    <Image
+                      source={MapaBandeiras[jogo.sigla_fora]}
+                      style={{ width: 40, height: 30 }}
+                    />
                   </View>
 
                   <View style={styles.locais}>
@@ -114,7 +125,7 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 300,
-    height: 200,
+    height: 'auto',
     backgroundColor: 'white',
     borderRadius: 10,
     padding: 10,
